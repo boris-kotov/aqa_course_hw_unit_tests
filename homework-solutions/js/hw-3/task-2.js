@@ -5,7 +5,6 @@ n + nn + nnn, где n не перемножаются, а конкатенир�
 
 */
 
-
 let n;
 let nn;
 let nnn;
@@ -13,7 +12,7 @@ let nnn;
 n = 9;
 
 nn = String(n) + n;
-nnn = "" + n + n + n;
+nnn = '' + n + n + n;
 
 console.log(n);
 console.log(nn);
