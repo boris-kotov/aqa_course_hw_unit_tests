@@ -25,7 +25,7 @@ if (typeof age != 'number') {
   console.log('Incorrect data type. Please try again.');
 } else if (age < minAge) {
   console.log("You don't have access cause your age is " + age + " It's less then " + minAge);
-} else if (age >= minAge && age <= maxAge) {
+} else if (age >= minAge && age < maxAge) {
   console.log('Welcome  !');
 } else if (age > maxAge) {
   console.log('Keep calm and look Culture channel');
@@ -51,7 +51,7 @@ if (isNaN(age1)) {
 
 if (age1 < minAge1) {
   console.log("Unfortunately, you don't have access cause your age is " + age1 + " It's less then " + minAge1);
-} else if (age1 >= minAge1 && age1 <= maxAge1) {
+} else if (age1 >= minAge1 && age1 < maxAge1) {
   console.log('Welcome  !');
 } else if (age1 > maxAge1) {
   console.log('Keep calm and look Culture channel');
