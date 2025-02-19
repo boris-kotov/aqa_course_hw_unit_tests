@@ -4,3 +4,18 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+
+let n;
+let nn;
+let nnn;
+
+n = 9;
+
+nn = String(n) + n;
+nnn = '' + n + n + n;
+
+console.log(n);
+console.log(nn);
+console.log(nnn);
+
+console.log(+n + Number(nn) + parseInt(nnn));
