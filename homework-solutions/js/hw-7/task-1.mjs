@@ -44,11 +44,11 @@ console.log(devideBy('I am super engineer'));
     первые два числа которой являются 0 и 1, а каждое последующее за ними число является суммой двух предыдущих
     - Например fibonacci(8) //21
   */
- 
+
 function fibonacci(n) {
   // Ваш код
   let result = 0;
-  
+
   if (n < 0) return console.log('Введите целое положительное число или 0');
   if (n <= 1) return n;
 
