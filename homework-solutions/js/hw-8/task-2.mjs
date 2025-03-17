@@ -19,12 +19,11 @@ const words = [
 ];
 const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
 
-function sortedByVowels (wordsArr) {
-  function countVowels(oneWord) { 
-    return oneWord.split('').filter(letter => vowels.includes(letter)).length;
+function sortedByVowels(wordsArr) {
+  function countVowels(oneWord) {
+    return oneWord.split('').filter((letter) => vowels.includes(letter)).length;
   }
-return wordsArr.sort((a, b) => countVowels(a) - countVowels(b));
+  return wordsArr.sort((a, b) => countVowels(a) - countVowels(b));
 }
-console.log(sortedByVowels(words));
 
 export { sortedByVowels };
