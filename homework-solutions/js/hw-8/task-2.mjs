@@ -17,9 +17,13 @@ const words = [
   'environment',
   'queue',
 ];
+const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
 
 function sortedByVowels(wordsArr) {
-  // Ваш код
+  function countVowels(oneWord) {
+    return oneWord.split('').filter((letter) => vowels.includes(letter)).length;
+  }
+  return wordsArr.sort((a, b) => countVowels(a) - countVowels(b));
 }
 
 export { sortedByVowels };
