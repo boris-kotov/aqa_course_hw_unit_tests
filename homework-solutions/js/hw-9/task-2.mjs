@@ -15,22 +15,62 @@ const characters = [
 
 function addCharacter(character) {
   // Ваш код
+  if (typeof character.name === 'string' && typeof character.age === 'number') {
+    characters.push(character);
+    return characters;
+  } else {
+    throw new Error('Invalid character data');
+  }
 }
 
 function getCharacter(name) {
   // Ваш код
+  if (typeof name === 'string') {
+    return characters.find((character) => character.name === name);
+  } else {
+    throw new Error('Invalid character data');
+  }
 }
 
 function getCharactersByAge(minAge) {
   // Ваш код
+  if (typeof minAge === 'number') {
+    return characters.filter((character) => character.age >= minAge);
+  } else {
+    throw new Error('Minimum age parameter is incorrect');
+  }
 }
 
 function updateCharacter(name, newCharacter) {
   // Ваш код
+  if (typeof newCharacter.name === 'string' && typeof newCharacter.age === 'number') {
+    const oldCharacter = getCharacter(name);
+    const { name: newName, age: newAge } = newCharacter;
+    if (oldCharacter) {
+      oldCharacter.name = newName;
+      oldCharacter.age = newAge;
+
+      return characters;
+    } else {
+      throw new Error('Character not found');
+    }
+  } else {
+    throw new Error('Invalid character data');
+  }
 }
 
 function removeCharacter(name) {
   // Ваш код
+  if (typeof name === 'string') {
+    const index = characters.findIndex((character) => character.name === name);
+    if (index !== -1) {
+      characters.splice(index, 1);
+    } else {
+      throw new Error('Character was not found');
+    }
+  } else {
+    throw new Error('Character name is incorrect');
+  }
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
