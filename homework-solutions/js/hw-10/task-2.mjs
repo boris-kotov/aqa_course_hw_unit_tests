@@ -9,6 +9,12 @@
 
 function countOccurrences(arr) {
   // ваш код
+
+  return arr.reduce((list, currentNumber, i, arr) => {
+    list[currentNumber] = (list[currentNumber] || 0) + 1;
+
+    return list;
+  }, {});
 }
 
 export { countOccurrences };
