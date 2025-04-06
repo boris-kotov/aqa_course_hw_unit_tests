@@ -19,9 +19,8 @@
  */
 
 function delayTwoSeconds(callback) {
-  setTimeout(() => {
-    if (callback) callback();
-  }, 2000);
+  if (!callback) return;
+  setTimeout(callback, 2000);
 }
 
 delayTwoSeconds(() => console.log('Two seconds passed'));
