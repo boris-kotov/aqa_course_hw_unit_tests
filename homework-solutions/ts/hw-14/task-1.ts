@@ -60,10 +60,14 @@ const stringArray = wrapInArray('Hello'); // ['Hello']
 // console.log(stringArray);
 
 function getLastItem<T>(arr: T[]): T {
+  if (!arr || arr.length === 0) {
+    throw new Error('Please input valid not empty array');
+  }
+
   let item = arr.at(-1);
 
   if (item === undefined) {
-    throw new Error('Please input not empty array');
+    throw new Error('Please input valid not empty array');
   }
   return item;
 }
