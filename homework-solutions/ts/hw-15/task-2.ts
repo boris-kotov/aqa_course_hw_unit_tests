@@ -21,3 +21,63 @@
       Реализовывать метод getDetails(), который должен выводить полную информацию об объекте вида:
         'My name is Elena TSovna, I am software developer with 6 years of experience in TypeScript and 6000$ salary' (пример для девелопера)
  */
+
+interface IPerson {
+  name: string;
+  surname: string;
+  experienceYears: number;
+  getDetails(): string;
+}
+
+abstract class Employee implements IPerson {
+  protected salary: number = 0;
+  constructor(
+    public name: string,
+    public surname: string,
+    public experienceYears: number,
+  ) {
+    this.salary = this.calculateSalary();
+  }
+  protected abstract calculateSalary(): number;
+  abstract getDetails(): string;
+}
+
+class Manager extends Employee {
+  constructor(
+    name: string,
+    surname: string,
+    experienceYears: number,
+    public prefered: 'scrum' | 'kanban',
+  ) {
+    super(name, surname, experienceYears);
+  }
+  protected calculateSalary(): number {
+    return this.experienceYears * 500;
+  }
+  getDetails(): string {
+    return `My name is ${this.name} ${this.surname}, I am a manager with ${this.experienceYears} years of experience in ${this.prefered} and ${this.salary}$ salary`;
+  }
+}
+
+class Developer extends Employee {
+  constructor(
+    name: string,
+    surname: string,
+    experienceYears: number,
+    public programmingLanguage: 'js' | 'ts' | 'java' | 'python',
+  ) {
+    super(name, surname, experienceYears);
+  }
+  protected calculateSalary(): number {
+    return this.experienceYears * 1000;
+  }
+  getDetails(): string {
+    return `My name is ${this.name} ${this.surname}, I am a software developer with ${this.experienceYears} years of experience in ${this.programmingLanguage} and ${this.salary}$ salary`;
+  }
+}
+
+const manager = new Manager('Elena', 'TSovna', 6, 'kanban');
+console.log(manager.getDetails()); 
+
+const developer = new Developer('Vasya', 'Pupkin', 2, 'java');
+console.log(developer.getDetails()); 
