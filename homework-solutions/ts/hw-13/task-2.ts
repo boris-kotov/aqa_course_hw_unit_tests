@@ -31,15 +31,12 @@
 validatePassword(""); */
 
 function validatePassword(password: string) {
-  if (
+  return (
     password.trim() !== '' &&
     password.length >= 8 &&
     /[A-Z]/.test(password) &&
     /[a-z]/.test(password) &&
     /[0-9]/.test(password)
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  );
+
 }
